@@ -8,4 +8,4 @@ RUN /usr/sbin/td-agent-gem install fluent-plugin-record-reformer
 
 EXPOSE 24224
 
-CMD exec td-agent -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
+CMD exec td-agent -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT --log /var/log/td-agent.log
