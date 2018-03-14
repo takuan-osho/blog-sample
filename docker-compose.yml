@@ -54,6 +54,8 @@ services:
       - FLUENTD_CONF=fluent.conf
     ports:
       - 24223:24224
+    links:
+      - fluentd
   nginx:
     image: nginx:1.11
     volumes:
