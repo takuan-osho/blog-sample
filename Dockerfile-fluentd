@@ -8,4 +8,4 @@ RUN /usr/sbin/td-agent-gem install fluent-plugin-elasticsearch fluent-plugin-rec
 
 EXPOSE 24224
 
-CMD exec td-agent -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT --log /var/log/td-agent.log
+CMD exec td-agent -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins --log /var/log/td-agent/td-agent.log $FLUENTD_OPT
