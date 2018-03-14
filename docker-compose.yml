@@ -43,6 +43,17 @@ services:
       - FLUENTD_CONF=fluent.conf
     ports:
       - 24224:24224
+  fluentdv1:
+    build:
+      context: .
+      dockerfile: Dockerfile-fluentdv1
+    volumes:
+      - ./_fluentd/v1:/fluentd/etc
+      - nginxlog:/var/log/nginx:ro
+    environment:
+      - FLUENTD_CONF=fluent.conf
+    ports:
+      - 24223:24224
   nginx:
     image: nginx:1.11
     volumes:
